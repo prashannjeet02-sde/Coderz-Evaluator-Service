@@ -8,6 +8,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.text());
 
+// Routes
+import finalRoute from "./routes";
+app.use("/api", finalRoute);
+
 // Server
 app.listen(serverConfig.PORT, () => {
   console.log(`Server is up at Port:${serverConfig.PORT}`);
